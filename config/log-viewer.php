@@ -10,9 +10,9 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Log Viewer
+    | Visualizador de Logs
     |--------------------------------------------------------------------------
-    | Log Viewer can be disabled, so it's no longer accessible via browser.
+    | O Visualizador de Logs pode ser desabilitado, para que não fique mais acessível via navegador.
     |
     */
 
@@ -24,10 +24,10 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Log Viewer Domain
+    | Domínio do Visualizador de Logs
     |--------------------------------------------------------------------------
-    | You may change the domain where Log Viewer should be active.
-    | If the domain is empty, all domains will be valid.
+    | Você pode alterar o domínio onde o Visualizador de Logs deve estar ativo.
+    | Se o domínio estiver vazio, todos os domínios serão válidos.
     |
     */
 
@@ -35,9 +35,9 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Log Viewer Route
+    | Rota do Visualizador de Logs
     |--------------------------------------------------------------------------
-    | Log Viewer will be available under this URL.
+    | O Visualizador de Logs estará disponível sob esta URL.
     |
     */
 
@@ -45,25 +45,25 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Back to system URL
+    | URL para voltar ao sistema
     |--------------------------------------------------------------------------
-    | When set, displays a link to easily get back to this URL.
-    | Set to `null` to hide this link.
+    | Quando configurada, exibe um link para retornar facilmente a esta URL.
+    | Defina como `null` para ocultar esse link.
     |
-    | Optional label to display for the above URL.
+    | Rótulo opcional para exibir junto com a URL acima.
     |
     */
 
     'back_to_system_url' => config('app.url', null),
 
-    'back_to_system_label' => null, // Displayed by default: "Back to {{ app.name }}"
+    'back_to_system_label' => null, // Por padrão exibe: "Back to {{ app.name }}"
 
     /*
     |--------------------------------------------------------------------------
-    | Log Viewer time zone.
+    | Fuso horário do Visualizador de Logs.
     |--------------------------------------------------------------------------
-    | The time zone in which to display the times in the UI. Defaults to
-    | the application's timezone defined in config/app.php.
+    | O fuso horário para exibir os horários na interface. Por padrão usa o fuso horário
+    | da aplicação definido em config/app.php.
     |
     */
 
@@ -71,9 +71,9 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Log Viewer datetime format.
+    | Formato de data e hora do Visualizador de Logs.
     |--------------------------------------------------------------------------
-    | The format used to display timestamps in the UI.
+    | O formato usado para exibir os timestamps na interface.
     |
     */
 
@@ -81,9 +81,9 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Log Viewer route middleware.
+    | Middleware da rota do Visualizador de Logs.
     |--------------------------------------------------------------------------
-    | Optional middleware to use when loading the initial Log Viewer page.
+    | Middleware opcional para usar ao carregar a página inicial do Visualizador de Logs.
     |
     */
 
@@ -94,10 +94,10 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Log Viewer API middleware.
+    | Middleware da API do Visualizador de Logs.
     |--------------------------------------------------------------------------
-    | Optional middleware to use on every API request. The same API is also
-    | used from within the Log Viewer user interface.
+    | Middleware opcional para usar em todas as requisições da API. A mesma API
+    | também é usada pela interface do Visualizador de Logs.
     |
     */
 
@@ -110,11 +110,11 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Log Viewer Remote hosts.
+    | Hosts remotos do Visualizador de Logs.
     |--------------------------------------------------------------------------
-    | Log Viewer supports viewing Laravel logs from remote hosts. They must
-    | be running Log Viewer as well. Below you can define the hosts you
-    | would like to show in this Log Viewer instance.
+    | O Visualizador de Logs suporta visualização de logs Laravel de hosts remotos.
+    | Eles também devem estar rodando o Visualizador de Logs. Abaixo você pode definir
+    | os hosts que deseja mostrar nesta instância do Visualizador de Logs.
     |
     */
 
@@ -126,7 +126,7 @@ return [
         // 'staging' => [
         //     'name' => 'Staging',
         //     'host' => 'https://staging.example.com/log-viewer',
-        //     'auth' => [      // Example of HTTP Basic auth
+        //     'auth' => [      // Exemplo de autenticação HTTP Basic
         //         'username' => 'username',
         //         'password' => 'password',
         //     ],
@@ -136,7 +136,7 @@ return [
         // 'production' => [
         //     'name' => 'Production',
         //     'host' => 'https://example.com/log-viewer',
-        //     'auth' => [      // Example of Bearer token auth
+        //     'auth' => [      // Exemplo de autenticação Bearer token
         //         'token' => env('LOG_VIEWER_PRODUCTION_TOKEN'),
         //     ],
         //     'headers' => [
@@ -148,7 +148,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Include file patterns
+    | Padrões de arquivos incluídos
     |--------------------------------------------------------------------------
     |
     */
@@ -157,12 +157,12 @@ return [
         '*.log',
         '**/*.log',
 
-        // You can include paths to other log types as well, such as apache, nginx, and more.
-        // This key => value pair can be used to rename and group multiple paths into one folder in the UI.
+        // Você pode incluir caminhos para outros tipos de logs também, como apache, nginx e mais.
+        // Este par chave => valor pode ser usado para renomear e agrupar múltiplos caminhos em uma pasta na UI.
         '/var/log/httpd/*' => 'Apache',
         '/var/log/nginx/*' => 'Nginx',
 
-        // MacOS Apple Silicon logs
+        // Logs MacOS Apple Silicon
         '/opt/homebrew/var/log/nginx/*',
         '/opt/homebrew/var/log/httpd/*',
         '/opt/homebrew/var/log/php-fpm.log',
@@ -175,9 +175,9 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Exclude file patterns.
+    | Padrões de arquivos excluídos.
     |--------------------------------------------------------------------------
-    | This will take precedence over included files.
+    | Isso tem prioridade sobre os arquivos incluídos.
     |
     */
 
@@ -187,11 +187,11 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Hide unknown files.
+    | Ocultar arquivos desconhecidos.
     |--------------------------------------------------------------------------
-    | The include/exclude options above might catch files which are not
-    | logs supported by Log Viewer. In that case, you can hide them
-    | from the UI and API calls by setting this to true.
+    | As opções de incluir/excluir acima podem capturar arquivos que não são
+    | suportados pelo Visualizador de Logs. Neste caso, você pode ocultá-los
+    | da interface e das chamadas da API definindo isso como true.
     |
     */
 
@@ -199,10 +199,10 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    |  Shorter stack trace filters.
+    | Filtros para rastreamento de pilha mais curto.
     |--------------------------------------------------------------------------
-    | Lines containing any of these strings will be excluded from the full log.
-    | This setting is only active when the function is enabled via the user interface.
+    | Linhas contendo qualquer uma dessas strings serão excluídas do log completo.
+    | Esta configuração só está ativa quando a função é habilitada via interface.
     |
     */
 
@@ -214,10 +214,11 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Cache driver
+    | Driver de cache
     |--------------------------------------------------------------------------
-    | Cache driver to use for storing the log indices. Indices are used to speed up
-    | log navigation. Defaults to your application's default cache driver.
+    | Driver de cache a ser usado para armazenar os índices de logs.
+    | Os índices são usados para acelerar a navegação nos logs.
+    | Por padrão, usa o driver de cache padrão da aplicação.
     |
     */
 
@@ -225,12 +226,12 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Cache key prefix
+    | Prefixo da chave de cache
     |--------------------------------------------------------------------------
-    | Log Viewer prefixes all the cache keys created with this value. If for
-    | some reason you would like to change this prefix, you can do so here.
-    | The format of Log Viewer cache keys is:
-    | {prefix}:{version}:{rest-of-the-key}
+    | O Visualizador de Logs prefixa todas as chaves de cache criadas com este valor.
+    | Se por algum motivo você quiser mudar esse prefixo, pode fazê-lo aqui.
+    | O formato das chaves de cache do Visualizador de Logs é:
+    | {prefix}:{versão}:{resto-da-chave}
     |
     */
 
@@ -238,9 +239,9 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Chunk size when scanning log files lazily
+    | Tamanho do chunk ao escanear arquivos de log de forma preguiçosa
     |--------------------------------------------------------------------------
-    | The size in MB of files to scan before updating the progress bar when searching across all files.
+    | O tamanho em MB de arquivos a escanear antes de atualizar a barra de progresso ao pesquisar em todos os arquivos.
     |
     */
 
@@ -250,9 +251,9 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Per page options
+    | Opções de resultados por página
     |--------------------------------------------------------------------------
-    | Define the available options for number of results per page
+    | Define as opções disponíveis para número de resultados por página
     |
     */
 
@@ -260,47 +261,47 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Default settings for Log Viewer
+    | Configurações padrão do Visualizador de Logs
     |--------------------------------------------------------------------------
-    | These settings determine the default behaviour of Log Viewer. Many of
-    | these can be persisted for the user in their browser's localStorage,
-    | if the `use_local_storage` option is set to true.
+    | Essas configurações determinam o comportamento padrão do Visualizador de Logs.
+    | Muitas delas podem ser persistidas para o usuário no localStorage do navegador,
+    | caso a opção `use_local_storage` esteja ativada.
     |
     */
 
     'defaults' => [
 
-        // Whether to use browser's localStorage to store user preferences.
-        // If true, user preferences saved in the browser will take precedence over the defaults below.
+        // Usar o localStorage do navegador para armazenar preferências do usuário.
+        // Se true, as preferências salvas no navegador terão precedência sobre os padrões abaixo.
         'use_local_storage' => true,
 
-        // Method to sort the folders. Other options: `Alphabetical`, `ModifiedTime`
+        // Método para ordenar as pastas. Outras opções: `Alphabetical`, `ModifiedTime`
         'folder_sorting_method' => FolderSortingMethod::ModifiedTime,
 
-        // Order to sort the folders. Other options: `Ascending`, `Descending`
+        // Ordem para ordenar as pastas. Outras opções: `Ascending`, `Descending`
         'folder_sorting_order' => SortingOrder::Descending,
 
-        // Order to sort the logs. Other options: `Ascending`, `Descending`
+        // Ordem para ordenar os logs. Outras opções: `Ascending`, `Descending`
         'log_sorting_order' => SortingOrder::Descending,
 
-        // Number of results per page. Must be one of the above `per_page_options` values
+        // Número de resultados por página. Deve ser um dos valores definidos em `per_page_options`
         'per_page' => 25,
 
-        // Color scheme for the Log Viewer. Other options: `System`, `Light`, `Dark`
+        // Esquema de cores para o Visualizador de Logs. Outras opções: `System`, `Light`, `Dark`
         'theme' => Theme::System,
 
-        // Whether to enable `Shorter Stack Traces` option by default
+        // Se a opção `Shorter Stack Traces` deve estar ativada por padrão
         'shorter_stack_traces' => false,
 
     ],
 
     /*
     |--------------------------------------------------------------------------
-    | Root folder prefix
+    | Prefixo da pasta raiz
     |--------------------------------------------------------------------------
-    | The prefix for log files inside Laravel's `storage/logs` folder.
-    | Log Viewer does not show the full path to these files in the UI,
-    | but only the filename prefixed with this value.
+    | Prefixo para os arquivos de log dentro da pasta `storage/logs` do Laravel.
+    | O Visualizador de Logs não mostra o caminho completo desses arquivos na interface,
+    | mostrando apenas o nome do arquivo com este prefixo.
     |
     */
 
